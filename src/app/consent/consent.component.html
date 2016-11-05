@@ -1,15 +1,33 @@
 <md-card>
-  <div class="info">
-    <h2>Newtown Story</h2>
-    <h3></h3>
-    <p>I give consent to the Producers of Newtown Story to:</p>
-    <ul>
-      <li>make a recording of my image and voice,</li>
-      <li>to edit my image and voice into a program and</li>
-      <li>to distribute the program to third parties.</li>
-    </ul>
-    <p>My name and email is entered below.</p>
-  </div>
+	<div class="info">
+		<h2>Newtown Story</h2>
+		<md-spinner *ngIf="imageUploading" style="height: 50px;"></md-spinner>
+		<div *ngIf="!imageUploading">
+			<img class="actor-image" *ngIf="actor.imageUrl" [src]="actor.imageUrl" height=100>
+			<div md-card-avatar class="default-actor-image" *ngIf="! actor.imageUrl">
+				<md-icon>person</md-icon>
+			</div>
+			<br>
+			<input type="file" (change)="saveImage($event)" />
+		</div>
+	</div>
+	<button class="add-company-button" md-raised-button [md-menu-trigger-for]="menu"> 
+		{{actor.episode}}
+		<md-icon style="vertical-align: middle">expand_more</md-icon>
+	</button>
+	<md-menu #menu="mdMenu">
+	  <button (click)="actor.episode = episode" md-menu-item *ngFor="let episode of episodes">
+        {{episode}}
+      </button>
+	</md-menu>
+
+	<p>I give consent to the Producers of Newtown Story to:</p>
+	<ul>
+		<li>make a recording of my image and voice,</li>
+		<li>to edit my image and voice into a program and</li>
+		<li>to distribute the program to third parties.</li>
+	</ul>
+	<p>My name and email is entered below.</p>
 	<form #f="ngForm">
 		<md-input type="text" placeholder="Full name" name="fullName" [(ngModel)]="actor.fullName"></md-input>
 		<md-input type="text" placeholder="Email" name="email" [(ngModel)]="actor.email"></md-input>

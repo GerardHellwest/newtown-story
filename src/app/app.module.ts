@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
-// import * as firebase from 'firebase';
 import { AppComponent } from './app.component';
 import { ConsentComponent } from './consent/consent.component';
 import { ConsentListComponent } from './consent-list/consent-list.component';
@@ -16,10 +15,7 @@ let config = {
   databaseURL: 'https://newtown-story.firebaseio.com',
   storageBucket: 'newtown-story.appspot.com',
   messagingSenderId: '915123734153'
-}
-
-
-
+};
 
 @NgModule({
   declarations: [
