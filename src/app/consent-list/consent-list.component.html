@@ -1,0 +1,5 @@
+<md-card>
+	<md-list>
+		<md-list-item *ngFor="let actor of actors | async"> {{actor.fullName}} - {{actor.email}} </md-list-item>
+	</md-list>
+</md-card>

@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+body {
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin-top: 15px;
+}

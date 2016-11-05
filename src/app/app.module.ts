@@ -6,6 +6,8 @@ import { MaterialModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 // import * as firebase from 'firebase';
 import { AppComponent } from './app.component';
+import { ConsentComponent } from './consent/consent.component';
+import { ConsentListComponent } from './consent-list/consent-list.component';
 
 
 let config = {
@@ -21,7 +23,9 @@ let config = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConsentComponent,
+    ConsentListComponent
   ],
   imports: [
     BrowserModule,
