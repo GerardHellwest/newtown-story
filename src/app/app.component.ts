@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFire } from 'angularfire2';
 
 @Component({
   selector: 'ns-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ns works!';
+  constructor(private af: AngularFire) {
+    this.af.database.object('/connected').subscribe(data => console.log(data));
+  }
 }
